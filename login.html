@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MUSTANG</title>
+
+  <!-- Google Font: 'Bebas Neue' for a strong, rich look -->
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+
+  <div class="login-container">
+    <h1 class="mustang-title">MUSTANG</h1>
+
+    <form id="loginForm">
+      <input type="text" id="username" placeholder="Username" required>
+      <input type="password" id="password" placeholder="Password" required>
+      <button type="submit">Login</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const username = document.getElementById("username").value.trim();
+      const password = document.getElementById("password").value.trim();
+
+      if (username && password) {
+        alert("✅ Our team will contact you soon!");
+        document.getElementById("loginForm").reset();
+      } else {
+        alert("⚠️ Please fill in both fields!");
+      }
+    });
+  </script>
+
+</body>
+</html>

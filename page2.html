@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <title>Mustang Showcase</title>
+  <link rel="stylesheet" href="style1.css" />
+</head>
+<body>
+    <script src="bg.js"></script>
+
+  <nav>
+    <button onclick="showSection('home')">Home</button>
+    <button onclick="showSection('about')">About</button>
+    <button onclick="showSection('models')">Models</button>
+    <button onclick="showSection('contact')">Contact</button>
+  </nav>
+
+  <section id="home" class="content-section">
+    <h2 style="color: rgb(255, 0, 0);">Welcome to </h2>
+    <h1 style="color: rgb(241, 238, 238);">Mustang</h1>
+    <h2 style="color: rgba(60, 0, 255, 0.726);">Legacy of Ford </h2>
+  </section>
+
+  <section id="about" class="content-section" style="display:none;">
+    <h2 style="color: rgb(255, 255, 255);">About Mustang</h2>
+    <p style="color: rgb(255, 255, 255);">KING OF CAR, DRIVES BY FEARLESS LION</p>
+  </section>
+
+<section id="models" class="content-section" style="display:none;">
+  <h2>Mustang Models</h2>
+  <ul>
+    <li><button onclick="changeBackground('gt')" >Mustang GT</button></li>
+    <li><button onclick="changeBackground('mach1')">Mustang Mach 1</button></li>
+    <li><button onclick="changeBackground('shelby')">Mustang Shelby GT500</button></li>
+  </ul>
+</section>
+  <section id="contact" class="content-section" style="display:none;">
+    <h2 style="color: rgb(241, 238, 238);">Contact Us</h2>
+   
+    <div class="container">
+
+        <div class="content">
+            
+            <a href="login.html">signin or signup</a>
+        </div>
+    </div>
+
+    <!-- <p style="color: rgb(241, 238, 238);">📞 +91 98765 43210</p>
+    <p style="color: rgb(241, 238, 238);">📍 Chennai, Tamil Nadu</p> -->
+  </section>
+<section id="contact" class="content-section" style="display:none;">
+  <h2 style="color: rgb(241, 238, 238);">Login</h2>
+  <form id="login-form" style="color: rgb(241, 238, 238);">
+    <label for="username">Username:</label><br>
+    <input type="text" id="username" name="username" required><br><br>
+
+    <label for="password">Password:</label><br>
+    <input type="password" id="password" name="password" required><br><br>
+
+    <button type="submit">Login</button>
+  </form>
+  <p id="login-message" style="color: red;"></p>
+</section>
+
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('.content-section').forEach(sec => sec.style.display = 'none');
+      document.getElementById(id).style.display = 'block';
+      document.getElementById('car-display').innerHTML = '';
+    }
+
+    function showCar(model) {
+      const cars = {
+        gt: '<img src="gt.jpg" alt="Mustang GT" width="500"/>',
+        mach1: '<img src="mach1.jpg" alt="Mach 1" width="500"/>',
+        shelby: '<img src="shelby.jpg" alt="Shelby GT500" width="500"/>'
+      };
+      document.getElementById('car-display').innerHTML = cars[model];
+    }
+  </script>
+</body>
+</html>
